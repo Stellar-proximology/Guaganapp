@@ -1,0 +1,6 @@
+1: Investigator
+2: Hermit
+3: Martyr
+4: Opportunist
+5: Heretic
+6: Role Model

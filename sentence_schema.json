@@ -1,0 +1,237 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "You-n-i-verse Sentence Payload",
+  "type": "object",
+  "required": [
+    "astrology",
+    "hexagram",
+    "center",
+    "crystal",
+    "routing"
+  ],
+  "properties": {
+    "astrology": {
+      "type": "object",
+      "required": [
+        "sign",
+        "degree",
+        "minute",
+        "second",
+        "house",
+        "planet"
+      ],
+      "properties": {
+        "sign": {
+          "type": "string",
+          "description": "Zodiac sign (Aries..Pisces)"
+        },
+        "degree": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 29
+        },
+        "minute": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 59
+        },
+        "second": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 59
+        },
+        "house": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "planet": {
+          "type": "string",
+          "description": "Sun, Moon, Mercury, etc."
+        },
+        "modality": {
+          "type": "string",
+          "enum": [
+            "Cardinal",
+            "Fixed",
+            "Mutable"
+          ]
+        },
+        "element": {
+          "type": "string",
+          "enum": [
+            "Fire",
+            "Earth",
+            "Air",
+            "Water"
+          ]
+        }
+      }
+    },
+    "hexagram": {
+      "type": "object",
+      "required": [
+        "gate",
+        "line"
+      ],
+      "properties": {
+        "gate": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "color": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "tone": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "base": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "polarity": {
+          "type": "string",
+          "enum": [
+            "exaltation",
+            "detriment"
+          ]
+        },
+        "yin_yang": {
+          "type": "string",
+          "enum": [
+            "yin",
+            "yang"
+          ]
+        },
+        "axis_opposite_gate": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        }
+      }
+    },
+    "center": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "enum": [
+            "Head",
+            "Ajna",
+            "Throat",
+            "G",
+            "Heart (Ego)",
+            "Splenic",
+            "Sacral",
+            "Solar Plexus",
+            "Root (Base)"
+          ]
+        },
+        "gland": {
+          "type": "string"
+        },
+        "voice": {
+          "type": "string",
+          "description": "Declarative, Reflective, Imperative, etc."
+        }
+      }
+    },
+    "crystal": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Personality Crystal",
+            "Design Crystal",
+            "Magnetic Monopole"
+          ]
+        },
+        "dimension": {
+          "type": "string",
+          "enum": [
+            "Space",
+            "Evolution",
+            "Being",
+            "Design",
+            "Movement"
+          ]
+        },
+        "keynote": {
+          "type": "string",
+          "enum": [
+            "I Communicate",
+            "I Remember",
+            "I Am",
+            "I Design",
+            "I Create"
+          ]
+        }
+      }
+    },
+    "routing": {
+      "type": "object",
+      "required": [
+        "output_mode"
+      ],
+      "properties": {
+        "output_mode": {
+          "type": "string",
+          "enum": [
+            "Metaphysical",
+            "Scientific",
+            "Psycho-Linguistic",
+            "Synthia-Native",
+            "GeneKeys",
+            "Poetic",
+            "Symbolic"
+          ]
+        },
+        "yijing_wrapper": {
+          "type": "string",
+          "description": "Before/After Completion etc."
+        },
+        "channel_context": {
+          "type": "string"
+        },
+        "emergent_closure": {
+          "type": "string"
+        },
+        "weights": {
+          "type": "object",
+          "properties": {
+            "crystal_priority": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "planetary_bias": {
+              "type": "number"
+            },
+            "interference_gain": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}
